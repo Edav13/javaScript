@@ -9,27 +9,25 @@
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
 
-		var peopleProto = function() {
+		var peopleDynamicProto = function(name, age, state) {
+			this.age = age;
+			this.name = name;
+			this.state = state;
 
+			if(typeof this.printPerson !== 'function'){
+				peopleDynamicProto.prototype.printPerson = function(){
+				console.log(this.name+', '+this.age+', '+this.state);
+				};
+
+			}
 
 		};
-		peopleProto.prototype.age = 0;
-		peopleProto.prototype.name = 'no name';
-		peopleProto.prototype.state = 'no city';
 		
-		peopleProto.prototype.printPerson = function(){
-			console.log(this.name+', '+this.age+', '+this.state);
-		};
-
-		var person1 = new peopleProto();
-		//person1.name = 'John';
-		person1.age = 23;
-		person1.state = 'CA';
+		
+		var person1 = new peopleDynamicProto('John', 23, 'CA');
 
 		person1.printPerson();
 
-		console.log('age' in person1);
-		console.log(person1.hasOwnProperty('name'));
 	</script>
 </body>
 </html>
