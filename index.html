@@ -8,25 +8,29 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-
-		var peopleDynamicProto = function(name, age, state) {
-			this.age = age;
-			this.name = name;
-			this.state = state;
-
-			if(typeof this.printPerson !== 'function'){
-				peopleDynamicProto.prototype.printPerson = function(){
-				console.log(this.name+', '+this.age+', '+this.state);
-				};
-
-			}
-
+		var passed = 3;
+		var addTo = function () {
+			var inner = 2;
+			return passed + inner;
 		};
-		
-		
-		var person1 = new peopleDynamicProto('John', 23, 'CA');
+		console.log(addTo(3));
+		console.dir(addTo);
 
-		person1.printPerson();
+		var addTo1 = function(passed){
+			var add = function(inner){
+				return passed + inner;
+			}
+			return add;
+		}
+
+		var addThree = new addTo1(3);
+		var addFour = new addTo1(4);
+
+		console.dir(addThree);
+		console.dir(addFour);
+
+		console.log(addThree(1));
+		console.log(addFour(1));
 
 	</script>
 </body>
