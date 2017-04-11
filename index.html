@@ -8,29 +8,19 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-		var passed = 3;
-		var addTo = function () {
-			var inner = 2;
-			return passed + inner;
+		var obj = {num: 2};
+		var obj1 = {num: 5};
+		var addToThis = function(a, b, c) {
+			return this.num + a + b + c;
 		};
-		console.log(addTo(3));
-		console.dir(addTo);
+		console.log(addToThis.call(obj, 1, 2, 3));
+		var arr = [1, 2, 3];
+		console.log(addToThis.apply(obj, arr));
+		console.log(addToThis.apply(obj1, arr)); 
 
-		var addTo1 = function(passed){
-			var add = function(inner){
-				return passed + inner;
-			}
-			return add;
-		}
+		var bound = addToThis.bind(obj);
+		console.log(bound(1,2,3));
 
-		var addThree = new addTo1(3);
-		var addFour = new addTo1(4);
-
-		console.dir(addThree);
-		console.dir(addFour);
-
-		console.log(addThree(1));
-		console.log(addFour(1));
 
 	</script>
 </body>
