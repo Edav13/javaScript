@@ -8,50 +8,58 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-		let promiseToCleanTheRoom = new Promise (function(resolve, reject) {
-			let isClean = false;
-			if(isClean) {
-				resolve('Clean');
-			} else {
-				reject('no Clean');
+		var Pizza = {
+			crust: 'thin',
+			toppings: 3,
+			hasBacon: true,
+			howManyToppings: function(){
+				return this. toppings;
 			}
-		});
-		promiseToCleanTheRoom.then(function(fromResolve) {
-			console.log('the room is ' + fromResolve);
-		}).catch(function(fromReject){
-			console.log('the room is '+fromReject)
-		});
-
-		let cleanRoom = function() {
-			return new Promise(function(resolve, reject){
-				resolve('Cleaned The Room');
-			});
 		};
-		let removeGarbage = function(message) {
-			return new Promise(function(resolve, reject){
-				resolve(message+' remove Garbage')
-			});
-		};
-		let winIcecream = function(message) {
-			return new Promise(function(resolve, reject){
-				resolve(message+' wow Icecream');
-			});
-		};
+		Pizza.price = '12$';
+		console.log(Pizza.howManyToppings());
+		delete(Pizza.crust);
+		console.log(Pizza);
 
-		cleanRoom().then(function(result){
-			return removeGarbage(result);
-		}).then(function(result){
-			return winIcecream(result);
-		}).then(function(result){
-			console.log('finished '+result);
-		});
+		var Pizza1 = function(){
+			this.crust = 'thin';
+			this.toppings = 3;
+			this.hasBacon = true;
+		};
+		var PizzaA = new Pizza1();
+		var PizzaB = new Pizza1();
 
-		Promise.all([cleanRoom(), removeGarbage(), winIcecream()]).then(function(){
-			console.log('all finished')
-		});
-		Promise.race([cleanRoom(), removeGarbage(), winIcecream()]).then(function(){
-			console.log('one of them is finished')
-		});
+		PizzaA.crust = 'pan';
+		console.log(PizzaA.crust);
+		console.log(PizzaB.crust);
+		console.log(PizzaB instanceof Pizza1)
+		console.log(PizzaB.constructor)
+
+		var Pizza2 = function(){
+			var crust = 'thin';
+			var toppings = 3;
+			this.hasBacon = true;
+
+			this.getHasBacon = function(){
+				return this.hasBacon;
+			};
+			this.getCrust = function(){
+				return crust;
+			};
+			var getToppings = function(){
+				return toppings;
+			};
+			var tmp = {};
+			tmp.getToppings = getToppings;
+			return tmp;
+		};
+		var Pizza2A = new Pizza2;
+		console.log('---------')
+		//console.log(Pizza2A.getHasBacon());
+		//console.log(Pizza2A.getCrust());
+		console.log(Pizza2A.getToppings());
+
+
 	</script>
 </body>
 </html>
