@@ -8,49 +8,23 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-		var obj = function(){
-			this.i = 0;
-
-			this.add = function(i) {
-				this.i += i;
-				return this;
+	if(window.Worker) {
+		var Worker = function(){
+			this.onmessage = function(e) {
+				if(e.data.addThis !== undefined) {
+					this.postMessage({result: e.data.addThis.num1 + e.data.addThis.num2})
+				}
 			};
+		}
+		var myWorker = new Worker();
+		var message = {addThis:{num1:1, num2: 1}};
+		myWorker.postMessage(message);
 
-			this.substract = function(i) {
-				this.i -= i;
-				return this;				
-			};
-
-			this.print = function(){
-				console.log(this.i);
-			};
+		myWorker.onmessage = function(e) {
+			console.dir(e.data.result);
 		};
-		var x = new obj();
-		x.add(3).substract(2).print();
-
-		var obj1 = function(){
-			var i = 0;
-
-			var add = function(j) {
-				i += j;
-				return this;
-			};
-
-			var substract = function(j) {
-				i -= j;
-				return this;				
-			};
-
-			var print = function(){
-				console.log(i);
-			};
-			return {add: add, substract: substract, print: print};
-		};
-		var y = new obj1();
-		y.add(3).substract(2).print();
-
-		console.log(y);
-
+	}		
+	
 	</script>
 </body>
 </html>
