@@ -8,57 +8,34 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-		var Pizza = {
-			crust: 'thin',
-			toppings: 3,
-			hasBacon: true,
-			howManyToppings: function(){
-				return this. toppings;
-			}
-		};
-		Pizza.price = '12$';
-		console.log(Pizza.howManyToppings());
-		delete(Pizza.crust);
-		console.log(Pizza);
-
-		var Pizza1 = function(){
-			this.crust = 'thin';
-			this.toppings = 3;
-			this.hasBacon = true;
-		};
-		var PizzaA = new Pizza1();
-		var PizzaB = new Pizza1();
-
-		PizzaA.crust = 'pan';
-		console.log(PizzaA.crust);
-		console.log(PizzaB.crust);
-		console.log(PizzaB instanceof Pizza1)
-		console.log(PizzaB.constructor)
-
-		var Pizza2 = function(){
-			var crust = 'thin';
-			var toppings = 3;
-			this.hasBacon = true;
-
-			this.getHasBacon = function(){
-				return this.hasBacon;
+		var x = function(j) {
+			this.i = 0;
+			this.j = j;
+			this.getJ = function(){
+				return this.j;
 			};
-			this.getCrust = function(){
-				return crust;
-			};
-			var getToppings = function(){
-				return toppings;
-			};
-			var tmp = {};
-			tmp.getToppings = getToppings;
-			return tmp;
 		};
-		var Pizza2A = new Pizza2;
-		console.log('---------')
-		//console.log(Pizza2A.getHasBacon());
-		//console.log(Pizza2A.getCrust());
-		console.log(Pizza2A.getToppings());
 
+		var x1 = new x(1);
+		var x2 = new x(2);
+
+		console.log(x1.getJ());
+		console.log(x2.getJ());
+
+		var y = function(j) {
+			this.i = 0;
+			this.j = j;
+			
+		};
+		y.prototype.getJ = function(){
+				return this.j;
+			};
+
+		var y1 = new y(1);
+		var y2 = new y(2);
+
+		console.log(y1.getJ());
+		console.log(y2.getJ());
 
 	</script>
 </body>
