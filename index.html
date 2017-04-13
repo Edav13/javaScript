@@ -8,23 +8,32 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-	if(window.Worker) {
-		var Worker = function(){
-			this.onmessage = function(e) {
-				if(e.data.addThis !== undefined) {
-					this.postMessage({result: e.data.addThis.num1 + e.data.addThis.num2})
-				}
-			};
-		}
-		var myWorker = new Worker();
-		var message = {addThis:{num1:1, num2: 1}};
-		myWorker.postMessage(message);
-
-		myWorker.onmessage = function(e) {
-			console.dir(e.data.result);
+		var Job = function(){
+			this.pays = true;
 		};
-	}		
-	
+		Job.prototype.print = function(){
+			console.log(this.pays ? 'Please hire me' : 'no thank you');
+		};
+		var TechJob = function(title, pays){
+			Job.call(this);
+			this.title = title;
+			this.pays = pays;
+		};
+		TechJob.prototype = Object.create(Job.prototype);
+		TechJob.prototype.constructor = TechJob;
+
+		TechJob.prototype.print = function(){
+			console.log(this.pays ? this.title + ' job is great, please hire me' : 'I would rather learn javaScript')
+		};
+		Object.prototype.print = function() {
+			console.log('I am exectuting fromt the Master Object');
+		};
+		var softwarePosition = new TechJob('JavaScript Programmer', true);
+		var softwarePosition1 = new TechJob('vb', false);
+
+		console.log(softwarePosition.print());
+		console.log(softwarePosition1.print());
+
 	</script>
 </body>
 </html>
