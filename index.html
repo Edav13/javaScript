@@ -8,34 +8,48 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-		var x = function(j) {
+		var obj = function(){
 			this.i = 0;
-			this.j = j;
-			this.getJ = function(){
-				return this.j;
-			};
-		};
 
-		var x1 = new x(1);
-		var x2 = new x(2);
-
-		console.log(x1.getJ());
-		console.log(x2.getJ());
-
-		var y = function(j) {
-			this.i = 0;
-			this.j = j;
-			
-		};
-		y.prototype.getJ = function(){
-				return this.j;
+			this.add = function(i) {
+				this.i += i;
+				return this;
 			};
 
-		var y1 = new y(1);
-		var y2 = new y(2);
+			this.substract = function(i) {
+				this.i -= i;
+				return this;				
+			};
 
-		console.log(y1.getJ());
-		console.log(y2.getJ());
+			this.print = function(){
+				console.log(this.i);
+			};
+		};
+		var x = new obj();
+		x.add(3).substract(2).print();
+
+		var obj1 = function(){
+			var i = 0;
+
+			var add = function(j) {
+				i += j;
+				return this;
+			};
+
+			var substract = function(j) {
+				i -= j;
+				return this;				
+			};
+
+			var print = function(){
+				console.log(i);
+			};
+			return {add: add, substract: substract, print: print};
+		};
+		var y = new obj1();
+		y.add(3).substract(2).print();
+
+		console.log(y);
 
 	</script>
 </body>
