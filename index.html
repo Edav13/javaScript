@@ -8,31 +8,24 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-		var Job = function(){
-			this.pays = true;
-		};
-		Job.prototype.print = function(){
-			console.log(this.pays ? 'Please hire me' : 'no thank you');
-		};
-		var TechJob = function(title, pays){
-			Job.call(this);
-			this.title = title;
-			this.pays = pays;
-		};
-		TechJob.prototype = Object.create(Job.prototype);
-		TechJob.prototype.constructor = TechJob;
-
-		TechJob.prototype.print = function(){
-			console.log(this.pays ? this.title + ' job is great, please hire me' : 'I would rather learn javaScript')
-		};
-		Object.prototype.print = function() {
-			console.log('I am exectuting fromt the Master Object');
-		};
-		var softwarePosition = new TechJob('JavaScript Programmer', true);
-		var softwarePosition1 = new TechJob('vb', false);
-
-		console.log(softwarePosition.print());
-		console.log(softwarePosition1.print());
+		var counter = (function(){
+			var i = 1;
+			return {
+				get: function() {
+					return i;
+				},
+				set: function(val) {
+					i = val
+				},
+				increment: function() {
+					i++
+				}
+			}
+		})();
+		console.log(counter.get());
+		counter.set(5);
+		counter.increment();
+		console.log(counter.get());
 
 	</script>
 </body>
