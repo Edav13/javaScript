@@ -10,40 +10,20 @@
 	<script type="text/javascript" charset="utf-8" async defer>
 		
 		var a = [1, 2, 3, 4];
-		let iterator1 = a[Symbol.iterator]();
-		console.log(iterator1.next());
-		console.log(iterator1.next());
-		console.log(iterator1.next());
-		console.log(iterator1.next());
-		console.log(iterator1.next());
-
-		function *generator(){
-			yield 1;
-			yield 2;
-			yield 3;
-			yield 4;
-		};
-		let iterator = generator();
-		console.log(iterator.next());
-		console.log(iterator.next());
-		console.log(iterator.next());
-		console.log(iterator.next());
-		console.log(iterator.next());
-
-		function* infiniteMarker(){
-			let i = 0;
-			while(true){
-				yield i;
-				i++;
+		a.forEach(function(b){
+			console.log(b);
+		});
+		let anObject = {
+			name: 'bob',
+			age: 20,
+			friend: ['john', 'kim', 'peter'],
+			getName: function(){
+				return this.name;
 			}
 		};
-		let iterator2 = infiniteMarker();
-		console.log(iterator2.next());
-		console.log(iterator2.next());
-		console.log(iterator2.next());
-		console.log(iterator2.next());
-		console.log(iterator2.next());
-
+		for(var b in anObject){
+			console.log(b)
+		}
 	</script>
 </body>
 </html>
