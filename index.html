@@ -8,24 +8,39 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
-		var counter = (function(){
-			var i = 1;
-			return {
-				get: function() {
-					return i;
-				},
-				set: function(val) {
-					i = val
-				},
-				increment: function() {
-					i++
+		var add = function(a) {
+			return function(b) {
+				return a + b;
+			}
+		};
+		var addToFive = add(5);
+		console.log(addToFive(1));
+		var avg = function(...n){
+			let tot = 0;
+			for(let i=0; i<n.length; i++){
+				tot += n[i];
+			}
+			return tot/n.length;
+		};
+		var spiceUp = function(fn, ...n){
+			return function(...m) {
+				return fn.apply(this, n.concat(m))
+			}
+		};
+
+		var doAvg = spiceUp(avg, 1, 2, 3);
+		console.log(doAvg(2));
+		console.log(doAvg(1,2,3,4));
+		var sayWhat = function(a){
+			return function(b){
+				return function(c){
+					console.log("saving "+a+' to '+b+' using '+c);
 				}
 			}
-		})();
-		console.log(counter.get());
-		counter.set(5);
-		counter.increment();
-		console.log(counter.get());
+		};
+		sayWhat('hello')('toFriends')('javaScript');
+		var sayHi = sayWhat('hello')
+		var sayHiToMe = sayHi('me');
 
 	</script>
 </body>
