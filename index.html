@@ -9,23 +9,14 @@
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
 		
-		var x = `bond`;
-		let bondlin = `my name is ${x}, James ${x}`;
-		console.log(bondlin);
-		let one = 1, two = 2;
-		let sum = `adding ${one} and ${two} gives me ${one + two}`;
-		console.log(sum);
-		let tagged = function(strArray, ...vals){
-			console.log(strArray);
-			console.log(vals)
+		let add = function(n){
+			if(n<=0) {
+				return 0;
+			}else{
+				return n + add(n-1);
+			}
 		};
-		tagged`adding ${one} and ${two} gives me ${one + two}`;
-		console.log('hello Wordls'.endsWith('hell'));
-		console.log('hello Wordls'.includes('Wor'));
-		console.log('hello Wordls'.repeat(3));
-		let raw = String.raw` Not a newline:\n`;
-		console.log(raw);
-
+		console.log(add(5));
 	</script>
 </body>
 </html>
