@@ -9,21 +9,23 @@
 <body>
 	<script type="text/javascript" charset="utf-8" async defer>
 		
-		var a = [1, 2, 3, 4];
-		a.forEach(function(b){
-			console.log(b);
-		});
-		let anObject = {
-			name: 'bob',
-			age: 20,
-			friend: ['john', 'kim', 'peter'],
-			getName: function(){
-				return this.name;
-			}
+		var x = `bond`;
+		let bondlin = `my name is ${x}, James ${x}`;
+		console.log(bondlin);
+		let one = 1, two = 2;
+		let sum = `adding ${one} and ${two} gives me ${one + two}`;
+		console.log(sum);
+		let tagged = function(strArray, ...vals){
+			console.log(strArray);
+			console.log(vals)
 		};
-		for(var b in anObject){
-			console.log(b)
-		}
+		tagged`adding ${one} and ${two} gives me ${one + two}`;
+		console.log('hello Wordls'.endsWith('hell'));
+		console.log('hello Wordls'.includes('Wor'));
+		console.log('hello Wordls'.repeat(3));
+		let raw = String.raw` Not a newline:\n`;
+		console.log(raw);
+
 	</script>
 </body>
 </html>
