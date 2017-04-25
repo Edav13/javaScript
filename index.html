@@ -7,20 +7,39 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<input type="button" value="Show Array" onclick="displayArray()">
+	<table>
+		<tr>
+			<td>Enter any value:</td>
+			<td><input type="text" id="txtValue" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="button" id="btnAdd" value="Add to List" onclick="AddItemToExistingList()" /></td>
+		</tr>
+	</table>
 	<hr>
-	<div id="ResultsDiv"></div>
-		<script type="text/javascript" charset="utf-8" async defer>
+	<div id="ItemsCount"></div>
+	<br>
+	<div id="ItemsList"></div>
+	<script type="text/javascript" charset="utf-8" async defer>
 		
-		var arr = ['Jag1', 'Chat1', 'Win1', 'Dhan1'];
-		function displayArray(){
-			console.log('aaa')
-			resultDiv = document.getElementById("ResultsDiv");
-			arr.forEach(function(single, i){
-				let newDiv = document.createElement("div");
-				newDiv.innerHTML = "item "+ (i+1).toString() + " of "+arr.length.toString()+" is "+single;
-				ResultsDiv.appendChild(newDiv);
+		var list=[];
+		function AddItemToExistingList(){
+			list.push(document.getElementById("txtValue").value);
+			DisplayResults();
+		};
+		function DisplayResults(){
+			document.getElementById("ItemsCount").innerHTML = "No. of items added: "+ list.length;
+			var item = document.getElementById("ItemsList");
+			while(item.hasChildNodes()){
+				item.removeChild(item.lastChild);
+			}
+			list.forEach(function(single, i){
+				let NewDiv = document.createElement("div")
+				NewDiv.innerHTML = "Item "+ (i+1).toString()+" of "+list.length.toString()+" is "+single;
+				item.appendChild(NewDiv);
 			});
+
 		}
 	</script>
 </body>
