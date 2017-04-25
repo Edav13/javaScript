@@ -7,16 +7,21 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<script type="text/javascript" charset="utf-8" async defer>
+	<input type="button" value="Show Array" onclick="displayArray()">
+	<hr>
+	<div id="ResultsDiv"></div>
+		<script type="text/javascript" charset="utf-8" async defer>
 		
-		let add = function(n){
-			if(n<=0) {
-				return 0;
-			}else{
-				return n + add(n-1);
-			}
-		};
-		console.log(add(5));
+		var arr = ['Jag1', 'Chat1', 'Win1', 'Dhan1'];
+		function displayArray(){
+			console.log('aaa')
+			resultDiv = document.getElementById("ResultsDiv");
+			arr.forEach(function(single, i){
+				let newDiv = document.createElement("div");
+				newDiv.innerHTML = "item "+ (i+1).toString() + " of "+arr.length.toString()+" is "+single;
+				ResultsDiv.appendChild(newDiv);
+			});
+		}
 	</script>
 </body>
 </html>
