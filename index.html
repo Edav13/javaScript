@@ -7,55 +7,35 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<table>
-		<tr>
-			<td>Enter any value:</td>
-			<td><input type="text" id="txtAryValue"></td>
-			<td><input type="button" value="Push (the txt value)" id="btnAryAdd" onclick="DoAryPush()"></td>
-			<td><input id="btnAryPop" type="button" value="Pop" onclick="DoAryPop()"></td>
-			<td><input id="btnAryUnshift" type="button" value="Unshift (the txt value)" onclick="DoAryUnshift()"></td>
-			<td><input id="btnAryShift" type="button" value="Shift" onclick="DoAryShift()"></td>
-		</tr>
-	</table>
-	<hr>
-	<div id="AryCount"></div>
-	<br>
-	<div id="AryItems"></div>
-		<script type="text/javascript" charset="utf-8" async defer>
-		var ary = [10, "Jag", 30, 40, "Chat", true];
-		function DisplayAryResults(){
-			document.getElementById("AryCount").innerHTML = "No. of Items: "+ ary.length;
-			var AryItems = document.getElementById("AryItems");
-			while(AryItems.hasChildNodes()){
-				AryItems.removeChild(AryItems.lastChild)
-			}
-			ary.forEach(function(single, i){
-				var newDiv = document.createElement("div");
-				newDiv.innerHTML = "index "+ i+", Item " + (1+i)+" of "+ary.length+" is "+single;
-				AryItems.appendChild(newDiv);
-			});
-		}
-		function DoAryPush(){
-			let y = document.getElementById("txtAryValue").value;
-			ary.push(y);
-			DisplayAryResults();
+	<input type="button" value="Show Message" onclick="ShowMsg()">
+	<input type="button" value="Show Sum" onclick="DispSum(4,51)">
+	<input type="button" value="Show total Sum" onclick="ShowSum(15,45,21,56,78,45,1)">
+
+	<script type="text/javascript" charset="utf-8" async defer>
+		console.log(sumA(1,5))
+
+		function sumA(a,b){
+			return a+b;
+		};
+		var sumB = function(a,b){
+			return a+b;
 		}
 
-		function DoAryPop(){
-			ary.pop();
-			DisplayAryResults();
-		}
+		console.log(sumB(1,5))
 
-		function DoAryUnshift(){
-			let y = document.getElementById("txtAryValue").value;
-			ary.unshift(y);
-			DisplayAryResults();
+		function ShowMsg(){
+			console.log("This is message");
+		};
+		function DispSum(a, b){
+			console.log("Sum: "+(a+b));
 		}
-		function DoAryShift(){
-			ary.shift();
-			DisplayAryResults();
+		function ShowSum(...abcd){
+			 let s=0;
+			 abcd.forEach(function(single){
+			 	s+=single;
+			 });
+			console.log("Total Sum: "+s);
 		}
-	</script>
 	</script>
 </body>
 </html>
