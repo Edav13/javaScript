@@ -7,61 +7,53 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<input type="button" value="Button 1" onclick="btn1Click()">
-	<input type="button" value="Button 2" onclick="btn2Click()">
-	<input type="button" value="Button 3" onclick="btn3Click()">
-
-
+	<table>
+		<tr>
+			<td>Enter any value:</td>
+			<td><input type="text" id="txtAryValue"></td>
+			<td><input type="button" value="Push (the txt value)" id="btnAryAdd" onclick="DoAryPush()"></td>
+			<td><input id="btnAryPop" type="button" value="Pop" onclick="DoAryPop()"></td>
+			<td><input id="btnAryUnshift" type="button" value="Unshift (the txt value)" onclick="DoAryUnshift()"></td>
+			<td><input id="btnAryShift" type="button" value="Shift" onclick="DoAryShift()"></td>
+		</tr>
+	</table>
 	<hr>
-	<div id="ResultDiv"></div>
+	<div id="AryCount"></div>
+	<br>
+	<div id="AryItems"></div>
 		<script type="text/javascript" charset="utf-8" async defer>
-		
-		var emp1 = [];
-		emp1['Empno'] = 1001;
-		emp1['Name'] = 'Jag';
-		emp1['Sal'] = 5400.00;
-		emp1['Dept'] = 'Accounting';
-		var emp2 = [];
-		emp2['Empno'] = 1002;
-		emp2['Name'] = 'Chat';
-		emp2['Sal'] = 2400.00;
-		emp2['Dept'] = 'proudction';
-		var emp3 = [];
-		emp3['Empno'] = 1003;
-		emp3['Name'] = 'Dhan';
-		emp3['Sal'] = 5600.00;
-		emp3['Dept'] = 'Sales';
-		var emp4 = [];
-		emp4['Empno'] = 1001;
-		emp4['Name'] = 'Win';
-		emp4['Sal'] = 8900.00;
-		emp4['Dept'] = 'IT';
-		var emps = [emp1, emp2, emp3, emp4];
-		function displayEmps(){
-			var resultDiv = document.getElementById("ResultDiv");
-			emps.forEach(function(single){
-				for(let k in single){
-					var newDiv = document.createElement("div");
-					newDiv.innerHTML = k + ": "+ single[k];
-					resultDiv.appendChild(newDiv);
-				}
-				resultDiv.appendChild(document.createElement("br"));
+		var ary = [10, "Jag", 30, 40, "Chat", true];
+		function DisplayAryResults(){
+			document.getElementById("AryCount").innerHTML = "No. of Items: "+ ary.length;
+			var AryItems = document.getElementById("AryItems");
+			while(AryItems.hasChildNodes()){
+				AryItems.removeChild(AryItems.lastChild)
+			}
+			ary.forEach(function(single, i){
+				var newDiv = document.createElement("div");
+				newDiv.innerHTML = "index "+ i+", Item " + (1+i)+" of "+ary.length+" is "+single;
+				AryItems.appendChild(newDiv);
 			});
-			
 		}
-		function btn1Click (){
-			console.log(emp1.length);
+		function DoAryPush(){
+			let y = document.getElementById("txtAryValue").value;
+			ary.push(y);
+			DisplayAryResults();
 		}
-		var ary1 = [];
-		ary1[3]="something";
-		function btn2Click(){
-			console.log(ary1.length)
+
+		function DoAryPop(){
+			ary.pop();
+			DisplayAryResults();
 		}
-		var ary2 = [];
-		ary2[3]="something";		
-		ary2['Name']="Dhan";
-		function btn3Click(){
-			console.log(ary2.length)
+
+		function DoAryUnshift(){
+			let y = document.getElementById("txtAryValue").value;
+			ary.unshift(y);
+			DisplayAryResults();
+		}
+		function DoAryShift(){
+			ary.shift();
+			DisplayAryResults();
 		}
 	</script>
 	</script>
