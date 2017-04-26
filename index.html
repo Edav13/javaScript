@@ -7,7 +7,11 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<input type="button" value="Show Emps" onclick="displayEmps()">
+	<input type="button" value="Button 1" onclick="btn1Click()">
+	<input type="button" value="Button 2" onclick="btn2Click()">
+	<input type="button" value="Button 3" onclick="btn3Click()">
+
+
 	<hr>
 	<div id="ResultDiv"></div>
 		<script type="text/javascript" charset="utf-8" async defer>
@@ -33,7 +37,6 @@
 		emp4['Sal'] = 8900.00;
 		emp4['Dept'] = 'IT';
 		var emps = [emp1, emp2, emp3, emp4];
-		console.log(emps)
 		function displayEmps(){
 			var resultDiv = document.getElementById("ResultDiv");
 			emps.forEach(function(single){
@@ -45,6 +48,20 @@
 				resultDiv.appendChild(document.createElement("br"));
 			});
 			
+		}
+		function btn1Click (){
+			console.log(emp1.length);
+		}
+		var ary1 = [];
+		ary1[3]="something";
+		function btn2Click(){
+			console.log(ary1.length)
+		}
+		var ary2 = [];
+		ary2[3]="something";		
+		ary2['Name']="Dhan";
+		function btn3Click(){
+			console.log(ary2.length)
 		}
 	</script>
 	</script>
