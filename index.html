@@ -7,22 +7,21 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<input type="button" value="Show Dif" onclick="DoProcess(10,20, ShowDiff)">
-	<input type="button" value="Show Mul" onclick="DoProcess(10,20, ShowMultiplied)">
-	<input type="button" value="Another Show" onclick="DoProcess(10,20, function(a,b){console.log('diff: '+(a-b));})">
-
+	<input type="button" value="Show" onclick="doProcess(10,20)">
 
 	<script type="text/javascript" charset="utf-8" async defer>
-	function DoProcess(a, b, doLater){
-		console.log("Sum: ",(a+b));
-		doLater(a, b);
+	function doProcess(a, b){
+		dispSum();
+		dispDiff();
+		function dispSum(){
+			console.log("Sum: ",(a+b));
+		}
+		function dispDiff(){
+			console.log("Diff: ",(a-b));
+		}
+		
 	}
-	function ShowDiff(g, k){
-		console.log("Diff: ",(g-k))
-	};
-	function ShowMultiplied(g, k){
-		console.log("Product: ",(g*k))
-	};
+	doProcess(10,20)
 	</script>
 </body>
 </html>
