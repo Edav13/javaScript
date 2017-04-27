@@ -7,24 +7,23 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<input type="button" value="Show" onclick="doProcess(10,20)">
-
 	<script type="text/javascript" charset="utf-8" async defer>
-	function doProcess(a, b){
-		
-		function dispSum(){
-			console.log("Sum: ",(a+b));
-		}
-		dispSum();
-		doProcess = function(a,b){
-			console.log("Diff: ",(a-b));
-		}
+	var ary = [];
+	ary[0] = function(){
+		console.log("first");
 	}
-	doProcess(10,20);
-	doProcess(10,20);
-	doProcess(40,60);
-	doProcess(2,1);
-
+	ary[1] = function(){
+		console.log("second");
+	}
+	ary[2] = function(){
+		console.log("third");
+	}
+	ary[3] = function(){
+		console.log("fourth");
+	}
+	ary.forEach(function(single){
+		single();
+	});
 	
 	</script>
 </body>
