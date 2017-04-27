@@ -7,23 +7,18 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
+	<input id="btnDummy" type="button" value="This is dummy button. Click on the following button to make it functional"><br>
+	<input id="btnDo" type="button" value="Attach an event now" onclick="AttachEvent()"><br>
+
+
 	<script type="text/javascript" charset="utf-8" async defer>
-	var ary = [];
-	ary[0] = function(){
-		console.log("first");
+	function AttachEvent(){
+		var btnDummy = document.getElementById("btnDummy");
+		btnDummy.onclick = function(){
+			console.log("hey, I am functioning");
+		};
+		btnDummy.value = "I am not dummy any more.";
 	}
-	ary[1] = function(){
-		console.log("second");
-	}
-	ary[2] = function(){
-		console.log("third");
-	}
-	ary[3] = function(){
-		console.log("fourth");
-	}
-	ary.forEach(function(single){
-		single();
-	});
 	
 	</script>
 </body>
