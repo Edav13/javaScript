@@ -11,17 +11,18 @@
 
 	<script type="text/javascript" charset="utf-8" async defer>
 	function doProcess(a, b){
-		dispSum();
-		dispDiff();
+		
 		function dispSum(){
 			console.log("Sum: ",(a+b));
 		}
 		function dispDiff(){
 			console.log("Diff: ",(a-b));
 		}
-		
+		dispSum();
+		return dispDiff;
 	}
-	doProcess(10,20)
+	var a = doProcess(10,20);
+	a();
 	</script>
 </body>
 </html>
