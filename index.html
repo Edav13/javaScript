@@ -15,14 +15,17 @@
 		function dispSum(){
 			console.log("Sum: ",(a+b));
 		}
-		function dispDiff(){
+		dispSum();
+		doProcess = function(a,b){
 			console.log("Diff: ",(a-b));
 		}
-		dispSum();
-		return dispDiff;
 	}
-	var a = doProcess(10,20);
-	a();
+	doProcess(10,20);
+	doProcess(10,20);
+	doProcess(40,60);
+	doProcess(2,1);
+
+	
 	</script>
 </body>
 </html>
