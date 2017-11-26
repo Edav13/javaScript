@@ -1,14 +1,14 @@
-//immediately invoked Function Expresion
-(function() {
-    document.write('yo soy una funcion T_T');
-})();
+function primero() {
+    document.write('11111 <br>');
+}
 
-(function(a, b) {
-    document.write('<br>La suma es: ', a + b);
-})(2, 3);
+function segundo() {
+    document.write('2222 <br>');
+}
 
-var mensaje = (function() {
-    document.write('<br>yo soy una funcion T_T');
-})();
+function comenzar() {
+    primero();
+    segundo();
+}
 
-document.write('<br>' + mensaje);
+comenzar();
