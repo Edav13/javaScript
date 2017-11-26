@@ -1,16 +1,12 @@
-var a = 10;
-var b = 6;
-var c = 15;
-if(a > 5) {
-    document.write('La variable es mayor a 5<br/>');
+var a = 18;
+if(a == 18 && a < 20) {
+    document.write('Ambas condiciones son verdad<br/>');
 } else {
-    document.write('La variable no es mayor a 5<br/>');
+    document.write('Una condicion es falsa<br/>');
 }
 
-if(a > b && a > c) {
-    document.write('El numero mayor es: '+ a +'<br/>');
-} else if(b > a && b > c) {
-    document.write('El numero mayor es: '+ b +'<br/>');
+if(a == 10 || a < 25) {
+    document.write('Correcto! solo una condiciones sea verdad<br/>');
 } else {
-    document.write('El numero mayor es: '+ c +'<br/>');
+    document.write('Las condiciones son falsa<br/>');
 }
