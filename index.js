@@ -1,10 +1,16 @@
-var a = 8;
+var a = 10;
+var b = 6;
+var c = 15;
 if(a > 5) {
-    document.write('Numero mayor a 5 <br/>');
+    document.write('La variable es mayor a 5<br/>');
+} else {
+    document.write('La variable no es mayor a 5<br/>');
 }
-if(a == 8) {
-    document.write('Numero igual a 8 <br/>');
-}
-if(a != 7) {
-    document.write('Numero distinto a 7 <br/>');
+
+if(a > b && a > c) {
+    document.write('El numero mayor es: '+ a +'<br/>');
+} else if(b > a && b > c) {
+    document.write('El numero mayor es: '+ b +'<br/>');
+} else {
+    document.write('El numero mayor es: '+ c +'<br/>');
 }
