@@ -1,5 +1,5 @@
 var num = 3;
-while(num < 10) {
+do {
     document.write(num + '<br>');
     num++;
-}
+} while(num < 10) 
