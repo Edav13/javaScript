@@ -1,5 +1,4 @@
-var puntaje = 60;
-
-var mensaje = puntaje > 80 ? 'Felicitaciones' : 'Necesitas estudiar mas';
-
-document.write(mensaje);
+var num1 = prompt('Ingrese un valor: ');
+var num2 = prompt('Ingrese un valor: ');
+var suma = parseInt(num1) + parseInt(num2); 
+document.write(suma)
