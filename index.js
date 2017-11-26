@@ -1,3 +1,5 @@
-for(var i = 0; i <= 100; i++) {
-    document.write(i + ' ');
+var num = 3;
+while(num < 10) {
+    document.write(num + '<br>');
+    num++;
 }
