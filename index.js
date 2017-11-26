@@ -1,22 +1,10 @@
 var a = 8;
-var b = 6;
-document.writeln(a + b);
-document.write('<br>');
-document.writeln(a - b);
-document.write('<br>');
-document.writeln(a * b);
-document.write('<br>');
-document.writeln(a / b);
-document.write('<br>');
-document.writeln(a % b);
-
-a += b;
-document.write('<br>'+a);
-a -= b;
-document.write('<br>'+a);
-a *= b;
-document.write('<br>'+a);
-a++;
-document.write('<br>'+a);
-
-
+if(a > 5) {
+    document.write('Numero mayor a 5 <br/>');
+}
+if(a == 8) {
+    document.write('Numero igual a 8 <br/>');
+}
+if(a != 7) {
+    document.write('Numero distinto a 7 <br/>');
+}
