@@ -1,12 +1,5 @@
-var a = 18;
-if(a == 18 && a < 20) {
-    document.write('Ambas condiciones son verdad<br/>');
-} else {
-    document.write('Una condicion es falsa<br/>');
-}
+var puntaje = 60;
 
-if(a == 10 || a < 25) {
-    document.write('Correcto! solo una condiciones sea verdad<br/>');
-} else {
-    document.write('Las condiciones son falsa<br/>');
-}
+var mensaje = puntaje > 80 ? 'Felicitaciones' : 'Necesitas estudiar mas';
+
+document.write(mensaje);
