@@ -1,5 +1,8 @@
-document.write("Hola mundo");
-document.write('<h1>Hola mundo</h1>);
-document.write('<h2>Hola mundo</h2>);
+//comentario
+var nombre = 'Beto';
+var edad = 8
+/*
+declaracion variables
+*/
+document.write(nombre + ' tiene ' + edad + ' años');
 
-console.log('Codigo Mentor')
