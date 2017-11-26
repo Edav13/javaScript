@@ -1,11 +1,14 @@
-function miFuncion(a, b) {
-    return a + b;
-}
-document.write('La suma es: ' + miFuncion(2, 5));
+//immediately invoked Function Expresion
+(function() {
+    document.write('yo soy una funcion T_T');
+})();
 
-var persona = function(nombre) {
-    return 'Su nombre es: ' + nombre; 
-};
-document.write('<br> ');
+(function(a, b) {
+    document.write('<br>La suma es: ', a + b);
+})(2, 3);
 
-document.write(persona('Luis'));
+var mensaje = (function() {
+    document.write('<br>yo soy una funcion T_T');
+})();
+
+document.write('<br>' + mensaje);
