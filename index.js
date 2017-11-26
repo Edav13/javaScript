@@ -1,14 +1,8 @@
+var nombre = 'Luis';
 function primero() {
-    document.write('11111 <br>');
+    document.write(nombre + ' <br>');
 }
 
-function segundo() {
-    document.write('2222 <br>');
-}
+primero();
 
-function comenzar() {
-    primero();
-    segundo();
-}
-
-comenzar();
+document.write('Su nombre es: ' + nombre);
