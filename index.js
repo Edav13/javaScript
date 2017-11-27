@@ -1,4 +1,6 @@
-var a document.getElementById('info');
-a.innerHTML = 'CODIGO MENTOR';
-a.style.color = 'red';
-a.style.fontSize = '25px';
+function miFuncion() {
+    //document.querySelector('.miLink').style.backgroundColor = 'yellow';
+    var a = document.querySelector('a[class="miLink"]');
+    a.style.backgroundColor = 'yellow';
+    a.style.border = '4px solid green';
+}
