@@ -1,17 +1,9 @@
-function miFuncion(src) {
-    var e = document.getElementById('foto');
-    e.src = src;
-}
-
-function miFuncion1(button) {
-    var e = document.getElementById('foto1');
-    if(button.innerHTML === 'calabera'){
-        e.src = 'img/calabera.png';    
-    }
-    if(button.innerHTML === 'squirrel'){
-        e.src = 'img/squirrel.jpg';    
-    }
-    if(button.innerHTML === 'monkey'){
-        e.src = 'img/monkey.jpg';    
-    }
-}
+var cad = 'Hola mundo';
+var cad1 = 'Nueva cadena'
+document.write(cad.length);
+document.write('<br>');
+document.write(cad.toUpperCase());
+document.write('<br>');
+document.write(cad.toLowerCase());
+document.write('<br>');
+document.write(cad.concat(cad1));
