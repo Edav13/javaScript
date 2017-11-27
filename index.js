@@ -1,11 +1,17 @@
-var verImage = true;
-function miFuncion() {
+function miFuncion(src) {
     var e = document.getElementById('foto');
-    if(verImage){
-        e.src = 'img/squirrel.jpg';
-        verImage = false;
-    } else {
-        e.src = 'img/monkey.jpg';
-        verImage = true;
+    e.src = src;
+}
+
+function miFuncion1(button) {
+    var e = document.getElementById('foto1');
+    if(button.innerHTML === 'calabera'){
+        e.src = 'img/calabera.png';    
+    }
+    if(button.innerHTML === 'squirrel'){
+        e.src = 'img/squirrel.jpg';    
+    }
+    if(button.innerHTML === 'monkey'){
+        e.src = 'img/monkey.jpg';    
     }
 }
