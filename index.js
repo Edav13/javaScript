@@ -1,8 +1,11 @@
-var nombre = 'Luis';
-function primero() {
-    document.write(nombre + ' <br>');
+var ejecutar;
+
+function comenzar(){
+    ejecutar = setTimeout(function() {
+        document.write('Esta es una prueba<br>');
+    }, 3000);
 }
 
-primero();
-
-document.write('Su nombre es: ' + nombre);
+function detenerse() {
+    clearTimeout(ejecutar);
+}
