@@ -1,13 +1,9 @@
-var ejecutar;
-var cont = 0;
+document.write(Math.round(4.3) + '<br>');
+document.write(Math.abs(-10) + '<br>');
+document.write(Math.ceil(4.1) + '<br>');
+document.write(Math.floor(7.9) + '<br>');
+document.write(Math.pow(3, 2) + '<br>');
+document.write(Math.sqrt(3) + '<br>');
 
-function comenzar(){
-    ejecutar = setInterval(function() {
-        document.write('Esta es una prueba<br>');
-        cont++;
-        if(cont == 6) {
-            clearInterval(ejecutar)
-        }
-    }, 3000);
-}
-comenzar();
+document.write(Math.random() + '<br>');
+document.write(Math.floor(Math.random() * 10) + '<br>');
