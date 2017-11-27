@@ -1,10 +1,14 @@
-function miFuncion() {
+function validarFormulario() {
     var texto;
-    var num = document.getElementById('caja').value;
-    if(isNaN(num) || num < 1 || num > 8) {
-        texto = '<span style="color:red">Input invalido</span>';
-    } else {
-        texto = '<span style="color:green">Input valido</span>';
+    var usuario = document.forms['miForm']['nombre'].value;
+    if(usuario == null || usuario == '') {
+        texto = '<span style="color:red;">Ingrese su nombre de usuario</span>';
+        document.getElementById('info').innerHTML = texto;
+        return false;
+    } else if(usuario.length < 5) {
+        texto = '<span style="color:red;">Usuario debe tener al menos 5 caracteres</span>';
+        document.getElementById('info').innerHTML = texto;
+        return false;
     }
-    document.getElementById('info').innerHTML = texto;
+        return false;
 }
