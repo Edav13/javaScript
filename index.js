@@ -1,7 +1,4 @@
-var num = parseInt(prompt('Ingrese un valor:'));
-
-function factorial(n) {
-    return n > 1 ? n * factorial(n - 1) : 1;
-}
-
-document.write(num + ' el factorial es: ' + factorial(num))
+var a document.getElementById('info');
+a.innerHTML = 'CODIGO MENTOR';
+a.style.color = 'red';
+a.style.fontSize = '25px';
