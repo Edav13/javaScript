@@ -1,10 +1,4 @@
-var cliente = 'Henry';
-var finalizar = true;
-
-while(finalizar) {
-    var nombre = prompt('Ingrese cliente: ');
-    if(nombre === cliente){
-        document.getElementById('info').innerHTML = 'Cliente ' + nombre + ' fue encontrado.';
-        finalizar = !finalizar;
-    }
+function miFuncion() {
+	var e = document.getElementById('foto');
+	e.src = 'img/squirrel.jpg';
 }
