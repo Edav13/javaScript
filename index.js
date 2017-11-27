@@ -1,9 +1,4 @@
 var cad = 'Hola mundo';
-var cad1 = 'Nueva cadena'
-document.write(cad.length);
-document.write('<br>');
-document.write(cad.toUpperCase());
-document.write('<br>');
-document.write(cad.toLowerCase());
-document.write('<br>');
-document.write(cad.concat(cad1));
+document.getElementById('info').innerHTML = cad.slice(3);
+document.getElementById('info').innerHTML += '<br>' + cad.slice(3, 6);
+
