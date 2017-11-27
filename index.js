@@ -1,16 +1,10 @@
-var a = 4;
-var b = '4';
+var cliente = 'Henry';
+var finalizar = true;
 
-document.write(a + b);
-
-if(a == b) {
-    document.write('<br>son iguales');
-} else {
-    document.write('<br>NO son iguales');
-}
-
-if(a === b) {
-    document.write('<br>son iguales');
-} else {
-    document.write('<br>NO son iguales');
+while(finalizar) {
+    var nombre = prompt('Ingrese cliente: ');
+    if(nombre === cliente){
+        document.getElementById('info').innerHTML = 'Cliente ' + nombre + ' fue encontrado.';
+        finalizar = !finalizar;
+    }
 }
